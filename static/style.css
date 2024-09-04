@@ -1,0 +1,115 @@
+:root {
+    --primary-color: #a634db;
+    --primary-dark: #8b29b9;
+    --primary-light: #ecf0f1;
+    --text-color: #333;
+    --background-color: #f0f2f5;
+    --form-background: #ffffff;
+    --border-radius: 6px;
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+form {
+    background: var(--form-background);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+input[type="text"] {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-dark);
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 91, 255, 0.5);
+}
+
+button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+h2 {
+    margin-top: 30px;
+    color: var(--text-color);
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: var(--form-background);
+    border: 2px solid var(--primary-color);
+    padding: 12px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+li:hover {
+    background: var(--primary-light);
+    border-color: var(--primary-dark);
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Scraper</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>Email Scraper</h1>
+    <form method="POST" action="/">
+        <label for="url">Enter URL to scrape:</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Scrape</button>
+    </form>
+
+    {% if emails %}
+        <h2>Found Emails:</h2>
+        <ul>
+        {% for email in emails %}
+            <li>{{ email }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
