@@ -8,19 +8,34 @@
 </head>
 <body>
     <h1>Email Scraper</h1>
-    <form method="POST" action="/">
-        <label for="url">Enter URL to scrape:</label>
-        <input type="text" id="url" name="url" required>
-        <button type="submit">Scrape</button>
-    </form>
 
-    {% if emails %}
-        <h2>Found Emails:</h2>
-        <ul>
-        {% for email in emails %}
-            <li>{{ email }}</li>
-        {% endfor %}
-        </ul>
+    {% if not logged_in %}
+        <h2>Login</h2>
+        <form method="POST" action="/login">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    {% else %}
+        <form method="POST" action="/">
+            <label for="url">Enter URL to scrape:</label>
+            <input type="text" id="url" name="url" required>
+            <button type="submit">Scrape</button>
+        </form>
+
+        {% if emails %}
+            <h2>Found Emails:</h2>
+            <ul>
+            {% for email in emails %}
+                <li>{{ email }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        <form action="/logout" method="POST">
+            <button type="submit">Logout</button>
+        </form>
     {% endif %}
 </body>
 </html>
